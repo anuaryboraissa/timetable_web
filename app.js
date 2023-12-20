@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.get('/'.(req,res)=>res.json({message:"hellow timetable"}))
 // app.use("/app/api",require("./service/route"))
-var port=process.env.port || 5000
+var port=process.env.PORT || 5000
 app.listen(port,function(){
   console.log("sever running in port: ",port);
 })

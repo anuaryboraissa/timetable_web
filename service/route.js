@@ -518,7 +518,7 @@ router.get(
         const domain = endIndex !== -1 ? fullEndpoint.substring(0, endIndex) : fullEndpoint;
       // console.log("domain " + domain, fullEndpoint);
       const programsResponse = await axios.get(
-        `${domain}/app/api/programmes/${year}/${semester}`
+        `https://timetable-app.azurewebsites.net/app/api/programmes/${year}/${semester}`
       );
 
       const programs = programsResponse.data.programmes;
@@ -535,7 +535,7 @@ router.get(
         try {
           //   await delay(1000);
           const response = await axios.get(
-            `${domain}/app/api/${type}/${programValue}/${year}/${semester}`
+            `https://timetable-app.azurewebsites.net/app/api/${type}/${programValue}/${year}/${semester}`
           );
           const allSessions = [];
           response.data.data.forEach((day) => {

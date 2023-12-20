@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 app.use("/app/api",require("./service/route"))
-
-app.listen(5000,function(){
-  console.log("sever running in port: 2000" );
+var port=process.env.port || 5000
+app.listen(port,function(){
+  console.log("sever running in port: ",port);
 })
